@@ -1,8 +1,8 @@
 import pandas as pd # used to manipulate csv data
-from sklearn.feature_extraction.text import CountVectorizer #converts text in csv to tokens to count the number of each word
-from sklearn.model_selection import train_test_split #split data, some for training, some for testing
-from sklearn.naive_bayes import MultinomialNB #classifier, classifying to genre baed on word count
-from sklearn.metrics import accuracy_score #accuracy of its predictions
+from sklearn.feature_extraction.text import CountVectorizer 
+from sklearn.model_selection import train_test_split 
+from sklearn.naive_bayes import MultinomialNB 
+from sklearn.metrics import accuracy_score 
 # pip means to install python package everywhere, import is to import to specific file
 import joblib
 reading = pd.read_csv('cleaned_data.csv') #reading now stores the dataframe
@@ -26,3 +26,4 @@ print(f"Accuracy: {accuracy * 100:.2f}%\n") #outputs to stdout(terminal)
 joblib.dump(model, 'genre_model.pkl')
 
 joblib.dump(vectorizer, 'vectorizer.pkl')
+
