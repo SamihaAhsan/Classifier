@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='front.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="align">
+<div id="top">
+    <img src="{{ url_for('static', filename='Adobe Express - file.png') }}">
+    <p style="color: rgb(255, 249, 239);"> About </p>
+    <p style="color: rgb(255, 249, 239);"> Start Classifying </p>
+    <p style="color: rgb(255, 249, 239);">Sign Up!</p>
+</div>
+<center><h1 id="title">Welcome to Bookgen</h1></center>
+<button>Start Classifying</button>
+<img src="{{ url_for('static', filename='Copy of StudyNet.png') }}" id="mem">
+</div>
+
+<div class="classifying">
+    <img src="{{ url_for('static', filename='Copy of StudyNet (1).png') }}">
+    <center><h1>About</h1></center>
+</div>
+<div class="mains">
+   <center> <h1>Start Classifying</h1></center>
+    <form action="/connect" method="GET">
+        <input type="text" id="summary" name="summary" placeholder="Enter summary">
+        <input type="submit" value="Submit">
+        <p>You are {{ msg }} years old.</p>
+    </form>
+</div>
+
+
+</body>
+</html>
