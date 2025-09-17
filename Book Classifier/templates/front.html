@@ -10,28 +10,39 @@
 <div class="align">
 <div id="top">
     <img src="{{ url_for('static', filename='Adobe Express - file.png') }}">
-    <p style="color: rgb(255, 249, 239);"> About </p>
-    <p style="color: rgb(255, 249, 239);"> Start Classifying </p>
-    <p style="color: rgb(255, 249, 239);">Sign Up!</p>
+    <a id="first" style="color: rgb(255, 249, 239); "href="#classifying">About</a>
+    <a id="second" style="color: rgb(255, 249, 239); "href="#mains">Start Classifying</a>
+    <p style="color: rgb(255, 249, 239);">Database</p>
 </div>
 <center><h1 id="title">Welcome to Bookgen</h1></center>
-<button>Start Classifying</button>
-<img src="{{ url_for('static', filename='Copy of StudyNet.png') }}" id="mem">
+<center><p style="color: green; font-size: calc(2vh + 2vw); transform: translateY(-13vh); width: 70vw;">Plant the seeds of knowledge by classifying books so every reader finds their perfect match.🌱</p></center>
+<button id="kr" style="background-color: #ff9e4f">Start Classifying</button>
+<img src="{{ url_for('static', filename='Copy of StudyNet.png') }}" class="mem">
 </div>
 
-<div class="classifying">
-    <img src="{{ url_for('static', filename='Copy of StudyNet (1).png') }}">
+<div class="classifying" id="classifying">
+    <img src="{{ url_for('static', filename='Copy of StudyNet (1).png') }}" class="grass">
     <center><h1>About</h1></center>
+    <center><p>Bookgen has the goal of ensuring everyone is able to find books they want based on labelled accuracy. Currently libraries classify manually through people or through what others library have previously classified as. This create subjective classifications oftentimes so we are creating an objective approach </p></center>
+
+    <img src="{{ url_for('static', filename='Copy of StudyNet.png') }}" class="mem">
 </div>
-<div class="mains">
-   <center> <h1>Start Classifying</h1></center>
-    <form action="/connect" method="GET">
-        <input type="text" id="summary" name="summary" placeholder="Enter summary">
-        <input type="submit" value="Submit">
-        <p>You are {{ msg }} years old.</p>
+<div class="mains" id="mains">
+        <img src="{{ url_for('static', filename='Copy of StudyNet (1).png') }}" class="grass">
+   <center> <h1 style="top:-23vh">Start Classifying</h1></center>
+   
+    <form id="myForm" action="/connect" method="GET">
+          <textarea id="summary" name="summary" rows="20 vw" cols="60 vh" placeholder="Enter Summary...."></textarea><br>
+        <input type="submit" id="submit" name="submit">
     </form>
+    <img src="{{ url_for('static', filename='Copy of StudyNet.png') }}" class="mem">
+</div>
+<div class="classifying">
+    <img src="{{ url_for('static', filename='Copy of StudyNet (1).png') }}" class="grass">
+   <center><h1>Database</h1></center>
+    <img src="{{ url_for('static', filename='Copy of StudyNet.png') }}" class="mem">
 </div>
 
-
+<script src="{{ url_for('static', filename='front.js') }}"></script>
 </body>
 </html>
