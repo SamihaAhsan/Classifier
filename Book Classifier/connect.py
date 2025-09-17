@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template 
 import joblib
+import mysql.connector
 
 
 app = Flask(__name__)
@@ -8,7 +9,17 @@ app = Flask(__name__)
 model = joblib.load("genre_model.pkl")
 vectorizer = joblib.load("vectorizer.pkl")
 
+db = mysql.connector.connect(
+    host="localhost",       
+    user="me",       
+    database="bookgen",    
+    use_pure=True
+)
+
 @app.route("/connect", methods=['GET'])
+
+
+
 def predict_genre():
     summary = request.args.get('summary') #treated as a string
     if summary:
